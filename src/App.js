@@ -22,7 +22,8 @@ export default class App extends Component {
   
   handleUserChange = (user) => {
     this.setState({token: user.token,})
-    putTokenInLocalStorage(user);
+    putTokenInLocalStorage(user.token);
+   
   }
 
   handleLogout = () => {
