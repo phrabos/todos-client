@@ -36,3 +36,40 @@
     transform: rotate(360deg);
   }
 }
+
+label {
+  display: block
+}
+
+.todo {
+  border: solid 1px steelblue;
+  border-radius: 5px;
+  width: 50%;
+  padding: 10px;
+  cursor: pointer;
+  transition: all .2s ease-in-out;
+}
+
+
+.todo:hover {
+  background-color: salmon;
+}
+.delete:hover {
+  background-color: white;
+}
+
+.completed {
+  text-decoration: line-through;
+}
+.todo-list {
+  /* background-color: magenta; */
+  display: flex;
+  align-items: center;
+}
+.delete{
+  height: 40px;
+  border-radius: 5px;
+  background-color: salmon;
+  cursor: pointer;
+  transition: all .2s ease-in-out;
+}
