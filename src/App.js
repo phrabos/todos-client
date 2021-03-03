@@ -26,6 +26,7 @@ export default class App extends Component {
   }
 
   handleLogout = () => {
+    this.setState({token: '',})
     localStorage.clear();
     window.location.reload();
   }
