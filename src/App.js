@@ -10,7 +10,8 @@ import HomePage from './HomePage.js';
 import TodoListPage from './TodoList.js';
 import LoginPage from './login.js';
 import SignupPage from './Signup.js';
-import { getTokenFromLocalStorage } from './local-storage-utils.js';
+import Header from './header.js'
+import { getTokenFromLocalStorage, putTokenInLocalStorage } from './local-storage-utils.js';
 import PrivateRoute from './PrivateRoute.js';
 
 
@@ -21,13 +22,19 @@ export default class App extends Component {
   
   handleUserChange = (user) => {
     this.setState({token: user.token,})
+    putTokenInLocalStorage(user);
+  }
+
+  handleLogout = () => {
+    localStorage.clear();
+    window.location.reload();
   }
 
     render() {
-      console.log(this.state)
         return (
             <div>
                 <Router>
+                <Header token={this.state.token} handleLogout={this.handleLogout}/>
                     <Switch>
                         <Route 
                             path="/" 

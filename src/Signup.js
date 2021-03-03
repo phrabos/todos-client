@@ -19,8 +19,8 @@ export default class SignupPage extends Component {
         e.preventDefault();
         const user = await userSignup(this.state.email, this.state.password)
         this.props.handleUserChange(user);
+        this.props.history.push('/todos');
 
-        console.log(user);
     }
 
     render() {

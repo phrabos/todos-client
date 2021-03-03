@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { getTodos, addTodo, deleteTodo } from './api-utils';
+import { getTodos, addTodo, deleteTodo, completeTodo } from './api-utils';
 
 export default class TodoListPage extends Component {
     state = {
@@ -27,6 +27,11 @@ export default class TodoListPage extends Component {
 
     handleTodoChange = (e) => {
         this.setState({todo: e.target.value},)
+    }
+
+    handleComplete = async (todoId) => {
+        await completeTodo(todoId, this.props.token);
+        await this.fetchTodos();
     }
 
     handleDelete = async (todoId) => {

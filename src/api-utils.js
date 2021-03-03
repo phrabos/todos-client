@@ -43,3 +43,11 @@ export async function deleteTodo(id, token){
 
     return response.body;
 }
+
+export async function completeTodo(id, token){
+    const response = await request
+        .put(`${URL}/api/todos/${id}`)
+        .set('Authorization', token)
+
+    return response.body;
+}

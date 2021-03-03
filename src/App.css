@@ -42,7 +42,7 @@ label {
 }
 
 .todo {
-  border: solid 1px steelblue;
+  border: solid 1px salmon;
   border-radius: 5px;
   width: 50%;
   padding: 10px;
@@ -52,10 +52,13 @@ label {
 
 
 .todo:hover {
-  background-color: salmon;
+  background-color: steelblue;
+  color: white;
 }
 .delete:hover {
   background-color: white;
+  color: steelblue;
+  font-weight: 900;
 }
 
 .completed {
@@ -69,7 +72,9 @@ label {
 .delete{
   height: 40px;
   border-radius: 5px;
-  background-color: salmon;
+  background-color: steelblue;
   cursor: pointer;
   transition: all .2s ease-in-out;
+  border: solid 1px salmon;
+  color: white;
 }
